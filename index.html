@@ -9,13 +9,6 @@
   gtag('js', new Date());
 
   gtag('config', 'AW-18415699588');
-  <!-- Event snippet for Purchase conversion page -->
-<script>
-  gtag('event', 'conversion', {
-      'send_to': 'AW-18415699588/eB5GCLnuuOscEISNpc1E',
-      'transaction_id': ''
-      // 'new_customer': true /* calculate dynamically, populate with true/false */,
-  });
 
 </script>
 <meta charset="UTF-8">
@@ -1231,6 +1224,23 @@ const busImg = {
   trackBtn.addEventListener("click", startTracking);
 })();
 </script>
-
+<!-- Buscar Bus Purchase Conversion - fires only on booking -->
+<script>
+function fireBuscarPurchase() {
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18415699588/eB5GCLnuuOscEISNpc1E',
+      'transaction_id': ''
+  });
+}
+</script>
+  // Track purchase when URL has ?success or #success
+  if(window.location.href.includes('success')) {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-18415699588/eB5GCLnuuOscEISNpc1E',
+      'transaction_id': ''
+    });
+  }
+</script>
+  
 </body>
 </html>
